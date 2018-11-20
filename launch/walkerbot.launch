@@ -1,22 +1,16 @@
 <launch>
-  <arg name = "f" default = "10.0"/>
-  <arg name = "linVel" default = "0.5"/>
-  <arg name = "angVel" default = "0.5"/>
-  <arg name = "maxRange" default = "0.7"/>
-  <arg name = "maxDist" default = "0.0"/>
   <arg name = "record" default = "disable"/>
 
   <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
       <arg name="world_file" value="$(find walkerbot)/world/walledHuman"/>
   </include>
 
-  <node pkg = "walkerbot" name = "walkerbot" type = "walker" output = "screen">
-    <param name = "freq" value = "$(arg f)"/>
-    <param name = "linear_vel" value = "$(arg linVel)"/>
-    <param name = "ang_vel" value = "$(arg angVel)"/>
-    <param name = "max_range" value = "$(arg maxRange)"/>
-    <param name = "max_dist" value = "$(arg maxDist)"/>
-  </node>
+  <node
+    pkg = "walkerbot"
+    name = "walkerbot"
+    type = "walker"
+    output = "screen"
+  />
 
   <node
     pkg = "rosbag"
@@ -26,4 +20,3 @@
     if = "$(eval record == 'enable')"
   />
 </launch>
-
