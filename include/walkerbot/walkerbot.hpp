@@ -37,18 +37,18 @@
  *
  * @brief This is the declaration of the walkerbot class
  */
-#ifndef INCLUDE_WALKERBOT_HPP_
-#define INCLUDE_WALKERBOT_HPP_
+#ifndef INCLUDE_WALKERBOT_WALKERBOT_HPP_
+#define INCLUDE_WALKERBOT_WALKERBOT_HPP_
 
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
 
 class walkerbot {
-  private:
+ private:
     // A flag variable to check for the presence of any obstacles in proximity
     bool obsDetected;
 
-  public:
+ public:
     /*
      * @brief This is the constructor for the class
      */
@@ -76,4 +76,4 @@ class walkerbot {
     ~walkerbot();
 };
 
-#endif  // INCLUDE_WALKERBOT_HPP_
+#endif  // INCLUDE_WALKERBOT_WALKERBOT_HPP_

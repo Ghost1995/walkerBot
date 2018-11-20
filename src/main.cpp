@@ -126,7 +126,7 @@ int main(int argc, char **argv) {
       ROS_INFO_STREAM("Moving Forward");
       // Change the count to be greater than 0
       count += 1;
-    } else { // If the robot does see an obstacle
+    } else {  // If the robot does see an obstacle
       // Rotate at its position
       msg.angular.z = 0.5;
       // Ensure that the robot is not moving forward

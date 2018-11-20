@@ -53,7 +53,7 @@ walkerbot::walkerbot() {
 void walkerbot::readLaserSensor(const sensor_msgs::LaserScan::ConstPtr& msg) {
     for (auto i = 0; i < msg->ranges.size(); ++i) {
         ROS_DEBUG_STREAM("Range is: " << msg->ranges[i]);
-        if (msg->ranges[i] < 2) {
+        if (msg->ranges[i] < 1.0) {
             obsDetected = true;
             ROS_DEBUG_STREAM("Range is less than 0.7: " << msg->ranges[i]);
             return;
